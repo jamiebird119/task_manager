@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="row">
+	<h3> Category </h3>
+	<ul class="collapsible">
+		{% for category in categories %}
+		<li>
+			<div class="collapsible-header">
+				<div class="col">
+					<div class="inline_actions">
+						<a href="{{ url_for('edit_category', category_id=category._id)}}"
+							class="waves-effect waves-light btn btn_small">Edit</a>
+						<a href=""
+							class="waves-effect waves-light btn btn_small blue">Delete</a>
+					</div>
+				</div>
+				<div class="col ">
+					<strong>{{category.category_name}} </strong>
+				</div>
+			</div>
+
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endblock %}
